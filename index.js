@@ -1,46 +1,47 @@
 import React, { Component } from 'react';
 import { take, cancel, fork } from 'redux-saga/effects';
 
-export default function HOCsaga(WrappedComponent, saga) {
-  return class extends Component {
+export const sagaHOC = (WrappedComponent, sagas) => class SagaHOC extends Component {
+  constructor(props) {
+    super(props);
+    this.CANCEL_SAGAS = 'CANCEL_SAGAS';
+    this.constructor.displayName = `SagaHOC(${WrappedComponent.name})`;
+  }
 
-    constructor () {
-      this.CANCEL_SAGAS_HMR = '';
+  static contextTypes = { store: React.PropTypes.object };
+
+
+  componentDidMount() {
+    this.startSagas();
+  }
+
+  createAbortableSaga = (saga) => {
+    if (process.env.NODE_ENV === 'development') {
+      return function* main() {
+        const sagaTask = yield fork(saga);
+
+        yield take(this.CANCEL_SAGAS);
+        yield cancel(sagaTask);
+      };
     }
+    return saga;
+  }
 
-    componentDidMount() {
-      this.startSagas();
-    }
+  startSagas = () => {
+    sagas.map(this.createAbortableSaga).forEach(saga => this.context.store.runSaga(saga));
+  }
 
-    createAbortableSaga = () => {
-      if (process.env.NODE_ENV === 'development') {
-        return function* main() {
-          const sagaTask = yield fork(saga);
+  cancelSagas() {
+    this.context.store.dispatch({
+      type: this.CANCEL_SAGAS,
+    });
+  }
 
-          yield take(this.CANCEL_SAGAS_HMR);
-          yield cancel(sagaTask);
-        };
-      }
-      return saga;
-    }
+  componentWillUnmount() {
+    this.cancelSagas();
+  }
 
-    startSagas = () => {
-      this.sagas.map(this.createAbortableSaga).forEach(saga => this.store.runSaga(saga));
-    }
-
-    cancelSagas() {
-      this.context.store.dispatch({
-        type: 'CANCEL_SAGAS_HMR',
-      });
-    }
-
-    componentWillUnmount() {
-      // Clean up listener
-      this.context.store.dispatch('')
-    }
-
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
-  };
-}
+  render() {
+    return <WrappedComponent {...this.props} />;
+  }
+};
