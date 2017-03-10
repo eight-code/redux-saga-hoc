@@ -1,5 +1,5 @@
 {
-  "name": "redux-hoc-saga",
+  "name": "redux-saga-hoc",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
