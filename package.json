@@ -1,6 +1,6 @@
 {
   "name": "redux-saga-hoc",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "main": "src/index.js",
   "devDependencies": {
@@ -55,12 +55,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hajjiTarik/redux-hoc-saga.git"
+    "url": "git+https://github.com/hajjiTarik/redux-saga-hoc.git"
   },
   "author": "Hajji Tarik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hajjiTarik/redux-hoc-saga/issues"
+    "url": "https://github.com/hajjiTarik/redux-saga-hoc/issues"
   },
-  "homepage": "https://github.com/hajjiTarik/redux-hoc-saga#readme"
+  "homepage": "https://github.com/hajjiTarik/redux-saga-hoc#readme"
 }
