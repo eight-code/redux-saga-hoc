@@ -10,7 +10,6 @@ export const sagaHOC = (WrappedComponent, sagas) => class SagaHOC extends Compon
 
   static contextTypes = { store: React.PropTypes.object };
 
-
   componentDidMount() {
     this.startSagas();
   }
@@ -42,6 +41,5 @@ export const sagaHOC = (WrappedComponent, sagas) => class SagaHOC extends Compon
   }
 
   render() {
-    return <WrappedComponent {...this.props} />;
   }
 };
