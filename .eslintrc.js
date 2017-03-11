@@ -4,8 +4,6 @@ module.exports = {
     },
     "extends":[
         "airbnb",
-        "plugin:flowtype/recommended",
-        "plugin:cdiscount/recommended"
     ],
     "rules": {
         "import/no-extraneous-dependencies": [
