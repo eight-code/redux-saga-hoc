@@ -37,7 +37,7 @@ redux-saga-hoc takes in parameter the component and a array of sagas and when th
 
 ```js
 import React, { Component } from 'react';
-import HOCsaga from 'redux-saga-hoc';
+import sagaHOC from 'redux-saga-hoc';
 
 import { saga1, saga2, saga3 } from './sagas';
 
@@ -56,7 +56,7 @@ class RootComponent extends Component {
     );
   }
 }
-export default HOCsaga(RootComponent, [saga1, saga2, saga3]);
+export default sagaHOC(RootComponent, [saga1, saga2, saga3]);
 
 ````
 
