@@ -49,7 +49,8 @@
     "webpack-node-externals": "^1.5.4"
   },
   "scripts": {
-    "build": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/index.js",
+    "build:umd:dev": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/redux-saga-hoc.js --config webpack/dev.js",
+    "build:umd:prod": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/redux-saga-hoc.min.js --config webpack/prod.js",
     "lint:js": "eslint ./src/*.js",
     "lint:js:fix": "eslint --fix ./src/*.js",
     "lint:js:report": "eslint --format junit --no-color --output-file reports/eslint-report.xml ."
