@@ -1,6 +1,6 @@
 {
   "name": "redux-saga-hoc",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
   "devDependencies": {

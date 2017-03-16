@@ -90,7 +90,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      var _this = _possibleConstructorReturn(this, (SagaHOC.__proto__ || Object.getPrototypeOf(SagaHOC)).call(this, props));
 
-	      _this.createAbortableSaga = function (saga) {
+	      _this.createSaga = function (saga) {
 	        if (true) {
 	          return regeneratorRuntime.mark(function main() {
 	            var sagaTask;
@@ -122,7 +122,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      };
 
 	      _this.startSagas = function () {
-	        (sagas instanceof Array ? sagas : [sagas]).map(_this.createAbortableSaga).forEach(function (saga) {
+	        (sagas instanceof Array ? sagas : [sagas]).map(_this.createSaga).forEach(function (saga) {
 	          return _this.context.store.runSaga(saga);
 	        });
 	      };
@@ -152,7 +152,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      value: function render() {
 	        return _react2.default.createElement(WrappedComponent, _extends({
 	          cancelSagas: this.cancelSagas,
-	          runLocalSaga: this.createAbortableSaga
+	          runLocalSaga: this.createSaga
 	        }, this.props));
 	      }
 	    }]);

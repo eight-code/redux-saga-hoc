@@ -13,7 +13,7 @@ export default (WrappedComponent, sagas = []) => class SagaHOC extends Component
     this.startSagas();
   }
 
-  createAbortableSaga = (saga) => {
+  createSaga = (saga) => {
     if (process.env.NODE_ENV === 'development') {
       return function* main() {
         const sagaTask = yield fork(saga);
@@ -26,7 +26,7 @@ export default (WrappedComponent, sagas = []) => class SagaHOC extends Component
 
   startSagas = () => {
     ((sagas instanceof Array) ? sagas : [sagas])
-      .map(this.createAbortableSaga)
+      .map(this.createSaga)
       .forEach(saga => this.context.store.runSaga(saga));
   }
 
@@ -43,7 +43,7 @@ export default (WrappedComponent, sagas = []) => class SagaHOC extends Component
   render() {
     return (<WrappedComponent
       cancelSagas={this.cancelSagas}
-      runLocalSaga={this.createAbortableSaga}
+      runLocalSaga={this.createSaga}
       {...this.props}
     />);
   }
