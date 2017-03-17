@@ -30,7 +30,7 @@ ReactDOM.render(
   document.getElementById('app-entry'),
 );
 
-````
+```
 #### RootComponent.js
 
 redux-saga-hoc takes in parameter the component and a array of sagas and when the component is mounted it launches the sagas passed in parametre
@@ -58,5 +58,5 @@ class RootComponent extends Component {
 }
 export default sagaHOC(RootComponent, [saga1, saga2, saga3]);
 
-````
+```
 
