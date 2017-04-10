@@ -1,12 +1,12 @@
 # redux-saga-hoc
-is a react HOC that comes to be plugged into react components and the saga middleware saga, it allows to add the saga functions within the react component, also to start one or more saga(s) and possiblity to stop them.
+is a react HOC (higher order component) that comes to be plugged into react components and the saga middleware saga, it allows to add the saga functions within the react component, also to start one or more saga(s) and possiblity to stop them.
 
 ### Installation
 To install the stable version:
 
 ```js
 npm install --save redux-saga-hoc
-````
+```
 This assumes you are using npm as your package manager.
 
 ### Usage
@@ -59,4 +59,3 @@ class RootComponent extends Component {
 export default sagaHOC(RootComponent, [saga1, saga2, saga3]);
 
 ```
-
