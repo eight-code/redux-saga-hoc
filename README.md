@@ -1,4 +1,4 @@
-# redux-saga-hoc
+# Redux Saga HOC(Higher Order Component)
 is a react HOC (higher order component) that comes to be plugged into react components and the saga middleware saga, it allows to add the saga functions within the react component, also to start one or more saga(s) and possiblity to stop them.
 
 # ![alt tag](http://i.imgur.com/sfbpiE8.png)
