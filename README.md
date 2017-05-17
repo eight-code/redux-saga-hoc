@@ -1,5 +1,5 @@
 # Redux Saga HOC(Higher Order Component)
-is a react HOC (higher order component) that comes to be plugged into react components and the saga middleware saga, it allows to add the saga functions within the react component, also to start one or more saga(s) and possiblity to stop them.
+is a react HOC (higher order component) that comes to be plugged into react components and the saga middleware, it allows to add the saga functions within the react component, also to start one or more saga(s) and possiblity to stop them.
 
 # ![alt tag](http://i.imgur.com/sfbpiE8.png)
 
@@ -60,4 +60,29 @@ class RootComponent extends Component {
 }
 export default sagaHOC(RootComponent, [saga1, saga2, saga3]);
 
+```
+
+### AFTER (SAGA HOC)
+
+#### in saga.js
+```js
+function* rootSaga() {
+  yield takeEvery('ACTION_1', saga_1);
+  yield takeLatest('ACTION_2', saga_2);
+  yield takeEvery('ACTION_3', saga_3);
+  yield takeEvery('ACTION_4', saga_4);
+}
+```
+The problem is to throw all sagas even the one we do not need, the simplest solution is to find a way to throw that sagas we need
+
+### BEFORE
+#### in saga.js
+```js
+function* saga() {
+  yield takeEvery('ACTION_1', saga_1);
+}
+```
+#### in react component
+```js
+export default sagaHOC(MyComponent, saga);
 ```
