@@ -1,4 +1,4 @@
-# Redux Saga HOC(Higher Order Component)
+# Redux Saga HOC (Higher Order Component)
 is a react HOC (higher order component) that comes to be plugged into react components and the saga middleware, it allows to run, cancel saga in react component.
 # ![alt tag](http://i.imgur.com/sfbpiE8.png)
 
