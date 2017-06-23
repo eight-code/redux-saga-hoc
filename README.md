@@ -12,7 +12,7 @@ This assumes you are using npm as your package manager.
 
 ### Usage
 
-#### Entry.js
+#### Entry
 This part may differ for each of you.
 ```js
 
@@ -32,7 +32,7 @@ ReactDOM.render(
 );
 
 ```
-#### RootComponent.js
+#### RootComponent
 
 redux-saga-hoc takes in parameter the component and a array of sagas and when the component is mounted it launches the sagas passed in parametre
 
@@ -63,7 +63,7 @@ export default sagaHOC(RootComponent, [saga1, saga2, saga3]);
 
 ### AFTER (SAGA HOC)
 
-#### in saga.js
+#### in saga
 ```js
 function* rootSaga() {
   yield takeEvery('ACTION_1', saga_1);
@@ -75,7 +75,7 @@ function* rootSaga() {
 The problem is to throw all sagas even the one we do not need, the simplest solution is to find a way to throw that sagas we need
 
 ### BEFORE
-#### in saga.js
+#### in saga
 ```js
 function* saga() {
   yield takeEvery('ACTION_1', saga_1);
