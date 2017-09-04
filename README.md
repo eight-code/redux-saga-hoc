@@ -1,4 +1,4 @@
-# Redux Saga HOC (Higher Order Component):clock1245:
+# Redux Saga HOC (Higher Order Component):clock1230:
 is a react HOC that comes to be plugged into components and the sagas, it allows to run, cancel saga.
 # ![alt tag](http://i.imgur.com/sfbpiE8.png)
 
