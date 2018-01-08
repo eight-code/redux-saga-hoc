@@ -93,3 +93,6 @@ Hey dude! Help me out for a couple of :beers:!
 
 ## Licence
 MIT
+
+## Author
+Hajji Tarik.
