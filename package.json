@@ -1,8 +1,37 @@
 {
-  "name": "redux-saga-hoc",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "_from": "redux-saga-hoc",
+  "_id": "redux-saga-hoc@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-rymAjZMRf+C+5Cvfhe7QyX1ft1E=",
+  "_location": "/redux-saga-hoc",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "redux-saga-hoc",
+    "name": "redux-saga-hoc",
+    "escapedName": "redux-saga-hoc",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/redux-saga-hoc/-/redux-saga-hoc-1.0.0.tgz",
+  "_shasum": "af29808d93117fe0bee42bdf85eed0c97d5fb751",
+  "_spec": "redux-saga-hoc",
+  "_where": "/Users/hajjiTarek/Desktop/SHOC",
+  "author": {
+    "name": "Hajji Tarik"
+  },
+  "bugs": {
+    "url": "https://github.com/hajjiTarik/redux-saga-hoc/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "is a react HOC that comes to be plugged into react components and the saga middleware saga, it allows to add the saga functions within the react component, also to start one or more saga(s) and possiblity to stop them.",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.3.15",
@@ -48,6 +77,14 @@
     "webpack": "^1.9.6",
     "webpack-node-externals": "^1.5.4"
   },
+  "homepage": "https://github.com/hajjiTarik/redux-saga-hoc#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "name": "redux-saga-hoc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hajjiTarik/redux-saga-hoc.git"
+  },
   "scripts": {
     "build:umd:dev": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/redux-saga-hoc.js --config webpack/dev.js",
     "build:umd:prod": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/redux-saga-hoc.min.js --config webpack/prod.js",
@@ -55,14 +92,5 @@
     "lint:js:fix": "eslint --fix ./src/*.js",
     "lint:js:report": "eslint --format junit --no-color --output-file reports/eslint-report.xml ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hajjiTarik/redux-saga-hoc.git"
-  },
-  "author": "Hajji Tarik",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hajjiTarik/redux-saga-hoc/issues"
-  },
-  "homepage": "https://github.com/hajjiTarik/redux-saga-hoc#readme"
+  "version": "2.0.0"
 }
