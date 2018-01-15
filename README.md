@@ -1,3 +1,7 @@
+# Redux Saga HOC (Higher Order Component):clock1230:
+is a react HOC that comes to be plugged into components and the sagas, it allows to run, cancel saga.
+# ![alt tag](http://i.imgur.com/sfbpiE8.png)
+
 # redux-saga-hoc
 is a react HOC that comes to be plugged into react components and the saga middleware saga, it allows to add the saga functions within the react component, also to start one or more saga(s) and possiblity to stop them.
 
@@ -30,7 +34,7 @@ ReactDOM.render(
   document.getElementById('app-entry'),
 );
 
-````
+```
 
 ### IMPORTANT
 in your store API you must have a function called runSaga :
@@ -45,7 +49,7 @@ class ConfigureStore {
   });
 }
 
-````
+```
 
 #### RootComponent.js
 
@@ -74,15 +78,41 @@ class RootComponent extends Component {
 }
 export default HOCsaga(RootComponent, [saga1, saga2, saga3]);
 
-````
+```
+
+### AFTER (SAGA HOC)
+
+#### in saga
+```js
+function* rootSaga() {
+  yield takeEvery('ACTION_1', saga_1);
+  yield takeLatest('ACTION_2', saga_2);
+  yield takeEvery('ACTION_3', saga_3);
+  yield takeEvery('ACTION_4', saga_4);
+}
+```
+The problem is to throw all sagas even the one we do not need, the simplest solution is to find a way to throw that sagas we need
+
+### BEFORE
+#### in saga
+```js
+function* saga() {
+  yield takeEvery('ACTION_1', saga_1);
+}
+```
+#### in react component
+```js
+export default sagaHOC(MyComponent, saga);
+```
 
 ## Support on Beerpay
 Hey dude! Help me out for a couple of :beers:!
 
 [![Beerpay](https://beerpay.io/hajjiTarik/redux-saga-hoc/badge.svg?style=beer-square)](https://beerpay.io/hajjiTarik/redux-saga-hoc)  [![Beerpay](https://beerpay.io/hajjiTarik/redux-saga-hoc/make-wish.svg?style=flat-square)](https://beerpay.io/hajjiTarik/redux-saga-hoc?focus=wish)
 
+
 ## Licence
 MIT
 
 ## Author
-Hajji Tarik.
+Hajji Tarik
